@@ -1,0 +1,21 @@
+1. git clone https://github.com/PatrickAlphaC/hardhat-security-fcc
+2. two most commmon attacks: Reentrancy & Oracle Manipulation
+3. instalar pyton: ver si lo tienes con python3 --version y pip3 --version
+4. pip install solc-select
+5. solc-select install 0.8.7
+6. solc-select use 0.8.7
+7. pip install slither-analyzer
+8. slither --help para ver que todo va bien
+9. Escribir script en package.json: 
+"slither": "slither ./contracts --solc-remaps '@openzeppelin=node_modules/@openzeppelin @chainlink=node_modules/@chainlink' --exclude naming-convention,external-function,low-level-calls --buidler-ignore-compile"
+10. yarn (escribir yarn en un terminal para instalar todos nuestros paquetes)
+11. yarn slither (para empezar con el analisis)
+Analisis:
+    -Lineas en rojo: gran vulnerabilidad
+    -LIneas en verde: Pequeños detalles que no tienen mucha importancia y que probablemente estén bien pero igualmente habria que chequerarlos
+12. Intalar dokcker de: https://docs.docker.com/engine/install/ubuntu/
+13. Crar script en package.json: "toolbox": "docker run -it --rm -v $PWD:/src trailofbits/eth-security-toolbox"
+14. Crar carpeta ./contracts/test/fuzzing (fuzzing es probar el programa con entradas aleatorias)
+15. sudo yarn toolbox
+16. echidna-test /src/contracts/test/fuzzing/VaultFuzzTest.sol --contract VaultFuzzTest --config /src/contracts/test/fuzzing/config.yaml
+17. Escribir exti en el terminal
